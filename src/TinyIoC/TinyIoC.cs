@@ -98,6 +98,7 @@ namespace TinyIoC
 
 
 
+
 #else
 	public
 #endif
@@ -198,8 +199,10 @@ namespace TinyIoC
 
 
 
+
 #if TINYIOC_INTERNAL
     internal
+
 
 
 
@@ -275,6 +278,7 @@ namespace TinyIoC
 
 
 
+
 #region IDisposable Members
 	
         public void Dispose()
@@ -302,6 +306,7 @@ namespace TinyIoC
 
 
 
+
 #endregion
     }
 #endif
@@ -310,6 +315,7 @@ namespace TinyIoC
 	#region Extensions
 	#if TINYIOC_INTERNAL
     internal
+
 
 
 
@@ -345,6 +351,7 @@ namespace TinyIoC
 
 	#if TINYIOC_INTERNAL
     internal
+
 
 
 
@@ -439,6 +446,7 @@ namespace TinyIoC
 
             return methods.FirstOrDefault();
         }
+
 
 
 
@@ -582,6 +590,7 @@ namespace TinyIoC
 
 
 
+
 #else
 	public
 #endif
@@ -610,6 +619,7 @@ namespace TinyIoC
 
 
 
+
 #else
 	public
 #endif
@@ -630,6 +640,7 @@ namespace TinyIoC
 
 	#if TINYIOC_INTERNAL
     internal
+
 
 
 
@@ -677,6 +688,7 @@ namespace TinyIoC
 
 
 
+
 #else
 	public
 #endif
@@ -697,6 +709,7 @@ namespace TinyIoC
 
 	#if TINYIOC_INTERNAL
     internal
+
 
 
 
@@ -735,6 +748,7 @@ namespace TinyIoC
 
 	#if TINYIOC_INTERNAL
     internal
+
 
 
 
@@ -814,6 +828,7 @@ namespace TinyIoC
 
 
 
+
 #else
 	public
 #endif
@@ -850,6 +865,7 @@ namespace TinyIoC
 
 
 
+
 #else
 	public
 #endif
@@ -861,6 +877,7 @@ namespace TinyIoC
 
 	#if TINYIOC_INTERNAL
     internal
+
 
 
 
@@ -955,8 +972,19 @@ namespace TinyIoC
 	}
 	#endregion
 
+	[System.AttributeUsage (AttributeTargets.Property)]
+	#if TINYIOC_INTERNAL
+	internal
+	#else
+	public
+	#endif
+	class Inject : Attribute
+	{
+	}
+
 	#if TINYIOC_INTERNAL
     internal
+
 
 
 
@@ -2503,10 +2531,7 @@ namespace TinyIoC
 			return ResolveAll<ResolveType> (true);
 		}
 
-		[System.AttributeUsage (AttributeTargets.Property)]
-		public class Inject : Attribute
-		{
-		}
+
 
 
 		/// <summary>
@@ -3898,6 +3923,7 @@ namespace System.Reflection
 {
 	#if TINYIOC_INTERNAL
     internal
+
 
 
 
